@@ -15,24 +15,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BQb-ez-ksE">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frame_0_delay-0.1s.gif" translatesAutoresizingMaskIntoConstraints="NO" id="BQb-ez-ksE">
                                 <rect key="frame" x="57" y="298" width="300" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="Vgf-JD-Wg0"/>
                                     <constraint firstAttribute="width" constant="300" id="nD1-Br-lXU"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="leh-3R-N9c">
-                                <rect key="frame" x="192" y="240" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="leh-3R-N9c">
+                                <rect key="frame" x="192" y="233" width="30" height="30"/>
                                 <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uMn-tz-Npw"/>
+                                </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="74" translatesAutoresizingMaskIntoConstraints="NO" id="UxG-UB-Ge8">
-                                <rect key="frame" x="62" y="640" width="284" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="74" translatesAutoresizingMaskIntoConstraints="NO" id="UxG-UB-Ge8">
+                                <rect key="frame" x="65" y="638" width="284" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GjA-hm-TRY">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
                                         <state key="normal" title="Fade In"/>
+                                        <connections>
+                                            <action selector="fadeIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sNv-jf-DV4"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="60J-7K-Jpf">
                                         <rect key="frame" x="124" y="0.0" width="36" height="30"/>
@@ -41,13 +46,20 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GiD-nr-vbc">
                                         <rect key="frame" x="234" y="0.0" width="50" height="30"/>
                                         <state key="normal" title="Slide In"/>
+                                        <connections>
+                                            <action selector="slideIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j1x-bf-cix"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="UxG-UB-Ge8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4nE-b4-a3N"/>
+                            <constraint firstItem="UxG-UB-Ge8" firstAttribute="top" secondItem="BQb-ez-ksE" secondAttribute="bottom" constant="40" id="ZDG-Fx-4Nb"/>
+                            <constraint firstItem="BQb-ez-ksE" firstAttribute="top" secondItem="leh-3R-N9c" secondAttribute="bottom" constant="35" id="aaM-IS-D25"/>
                             <constraint firstItem="BQb-ez-ksE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="cTy-ZJ-xuP"/>
+                            <constraint firstItem="leh-3R-N9c" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="csV-kP-PST"/>
                             <constraint firstItem="BQb-ez-ksE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hir-bc-iwz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -62,4 +74,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="frame_0_delay-0.1s.gif" width="374" height="277"/>
+    </resources>
 </document>
