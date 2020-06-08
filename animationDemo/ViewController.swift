@@ -42,7 +42,7 @@ class ViewController: UIViewController {
             playBtn.setTitle("Stop", for: [])
             isAnimated = true
         }
-        imageView.startAnimating()
+//        imageView.startAnimating()
     }
     
 
@@ -53,6 +53,21 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func slideIn(_ sender: UIButton) {
+        imageView.center = CGPoint(x: imageView.center.x - 500, y: imageView.center.y)
+        UIView.animate(withDuration: 2) {
+            self.imageView.center = CGPoint(x: self.imageView.center.x + 500, y: self.imageView.center.y)
+        }
+    }
+    @IBAction func grow(_ sender: UIButton) {
+        let width = imageView.frame.size.width
+        let height =  imageView.frame.size.height
+        let x = imageView.frame.origin.x
+        let y =  imageView.frame.origin.y
+        
+        imageView.frame = CGRect(x: x, y: y, width: 0, height: 0)
+        UIView.animate(withDuration: 2) {
+            self.imageView.frame = CGRect(x: x, y: y, width: width, height: height)
+        }
     }
     
 }
